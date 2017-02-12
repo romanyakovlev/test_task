@@ -1,0 +1,28 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-xs-12">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Название товара</th>
+                        <th>Категория</th>
+                        <th>Кол-во проданных единиц</th>
+                        <th>Выручка, руб</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr>
+                        <td>{{product.name}}</td>
+                        <td>{{product.item}}</td>
+                        <td>{{product.sell_amount}}</td>
+                        <td>{{product.profit}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
