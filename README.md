@@ -1,5 +1,3 @@
-# test_task
-
 # Тестовое задание
 
 Проект залит на [heroku](http://sheltered-harbor-24371.herokuapp.com/). БД - PostgreSQL.
