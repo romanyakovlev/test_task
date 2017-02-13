@@ -6,8 +6,9 @@ from flask_httpauth import HTTPBasicAuth
 from views import MyModelView, MyAdminIndexView, StatisticView, ProductModelView, \
     CategoryModelView, UserModelView, OrderModelView
 from flask_babelex import Babel
-import flask_login as login
 from settings import app, db
+import flask_login as login
+import os
 
 auth = HTTPBasicAuth()
 babel = Babel(app)
@@ -88,4 +89,5 @@ if __name__ == "__main__":
     admin.add_view(UserModelView(User, db.session, url='/admin/users/', name="Пользователи"))
     admin.add_view(OrderModelView(Order, db.session, url='/admin/orders/', name="Заказы"))
     admin.add_view(StatisticView(url='/admin/statistics/', name="Отчёт"))
-    app.run(port=8880)
+     port = int(os.environ.get("PORT", 5000))
+     app.run(host='0.0.0.0', port=port)
