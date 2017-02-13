@@ -16,7 +16,7 @@ http://sheltered-harbor-24371.herokuapp.com/api/menu/
 ```sh
 http://sheltered-harbor-24371.herokuapp.com/api/create_order/1+1+2?operator=Вася
 ```
-где "1+1+2" - id блюда, "operator=Вася" - идентификатор оператора. Авторизация проходит через HTTP Basic Auth.
+где "1+1+2" - id блюд, "operator=Вася" - идентификатор оператора. Авторизация проходит через HTTP Basic Auth.
 
 # Зависимости
 - flask
