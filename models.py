@@ -1,6 +1,7 @@
 from sqlalchemy_mptt.mixins import BaseNestedSets
 from settings import app, db
 from sqlalchemy.sql import func
+from datetime import datetime
 
 class Category(db.Model, BaseNestedSets):
     __tablename__ = 'categories'
@@ -38,7 +39,7 @@ class Order(db.Model):
     __tablename__ = 'orders'
     id = db.Column(db.Integer, primary_key=True)
     products = db.relationship('Product', backref='orders', lazy='dynamic')
-    created = db.Column(db.DateTime, default=func.now())
+    created = db.Column(db.DateTime, default=datetime.now().replace(second=0, microsecond=0))
     resto_name = db.Column(db.String, default='Не указан')
     money_amount = db.Column(db.Integer)
     product_list = db.Column(db.String)
