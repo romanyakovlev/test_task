@@ -89,5 +89,5 @@ if __name__ == "__main__":
     admin.add_view(UserModelView(User, db.session, url='/admin/users/', name="Пользователи"))
     admin.add_view(OrderModelView(Order, db.session, url='/admin/orders/', name="Заказы"))
     admin.add_view(StatisticView(url='/admin/statistics/', name="Отчёт"))
-     port = int(os.environ.get("PORT", 5000))
-     app.run(host='0.0.0.0', port=port)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
