@@ -1,6 +1,6 @@
 from models import Product, Category, User, Order
 from flask import render_template, make_response, jsonify, redirect, request
-from make_menu import root
+from create_menu_dict import menu_dict
 from flask_admin import Admin
 from flask_httpauth import HTTPBasicAuth
 from views import MyModelView, MyAdminIndexView, StatisticView, ProductModelView, \
@@ -58,7 +58,7 @@ def index():
 @app.route('/api/menu')
 @auth.login_required
 def menu_api():
-    return jsonify(root)
+    return jsonify(menu_dict)
 
 
 @app.route('/api/create_order/<list:products_list>', methods=["GET"])

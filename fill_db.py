@@ -13,7 +13,7 @@ if __name__ == "__main__":
     )
     db.session.add(Product(name="Пиво", category_id=3, cost=100))
     db.session.add(Product(name="Газировка", category_id=4,cost=150))
-    db.session.add(Product(name="Вода", category_id=4,cost=150))
+    db.session.add(Product(name="Вода", category_id=4,cost=50))
     db.session.add(User(login="admin", password="admin"))
 
     db.drop_all()
